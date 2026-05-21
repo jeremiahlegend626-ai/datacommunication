@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Telegraph</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1Cm+S3X7RmOISVSu6Jz91FJjrNn3iDATC+6CDj1O7+snnVQoQu/6W+T7y9FqXsJCHmqqiVXd5N6eeGdX6f+Uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav class="sticky-nav">
+    <div class="nav-brand">Data Communication Summary</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#topics">Topics</a>
+      <a href="#telegraph">Telegraph</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+  <main>
+    <section class="container" style="padding-top: 130px;">
+      <div class="card telegraph-card">
+        <div class="telegraph-text">
+          <h2>Telegraph System</h2>
+          <p>The telegraph was among the earliest communication systems. It transmitted messages using electrical signals over long distances and laid the foundation for modern networking and data communication.</p>
+        </div>
+        <div class="telegraph-image-wrap">
+          <img src="telegraph.jpg" alt="Telegraph machine">
+        </div>
+      </div>
+    </section>
+
+    <!-- Morse Code Section -->
+    <section class="container" style="padding-top: 60px; padding-bottom: 60px;">
+      <div class="card" style="padding: 40px;">
+        <h2 style="color: #38bdf8; margin-bottom: 24px;">Morse Code Basics</h2>
+        
+        <div class="page-content" style="max-width: 100%; padding: 0;">
+          <p>Morse code is a character encoding method used to transmit messages via telegraph. It uses sequences of dots (.) and dashes (-) to represent letters, numbers, and punctuation. Each character has a unique pattern, separated by spaces.</p>
+          
+          <h3 style="margin-top: 28px; margin-bottom: 14px;">Common Morse Code Characters</h3>
+          <div class="morse-table" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 32px;">
+            <div class="morse-item"><strong>A:</strong> .-</div>
+            <div class="morse-item"><strong>B:</strong> -...</div>
+            <div class="morse-item"><strong>C:</strong> -.-.</div>
+            <div class="morse-item"><strong>D:</strong> -..</div>
+            <div class="morse-item"><strong>E:</strong> .</div>
+            <div class="morse-item"><strong>F:</strong> ..-.</div>
+            <div class="morse-item"><strong>G:</strong> --.</div>
+            <div class="morse-item"><strong>H:</strong> ....</div>
+            <div class="morse-item"><strong>I:</strong> ..</div>
+            <div class="morse-item"><strong>J:</strong> .---</div>
+            <div class="morse-item"><strong>K:</strong> -.-</div>
+            <div class="morse-item"><strong>L:</strong> .-..</div>
+            <div class="morse-item"><strong>M:</strong> --</div>
+            <div class="morse-item"><strong>N:</strong> -.</div>
+            <div class="morse-item"><strong>O:</strong> ---</div>
+            <div class="morse-item"><strong>P:</strong> .--.</div>
+            <div class="morse-item"><strong>Q:</strong> --.-</div>
+            <div class="morse-item"><strong>R:</strong> .-.</div>
+            <div class="morse-item"><strong>S:</strong> ...</div>
+            <div class="morse-item"><strong>T:</strong> -</div>
+            <div class="morse-item"><strong>U:</strong> ..-</div>
+            <div class="morse-item"><strong>V:</strong> ...-</div>
+            <div class="morse-item"><strong>W:</strong> .--</div>
+            <div class="morse-item"><strong>X:</strong> -..-</div>
+            <div class="morse-item"><strong>Y:</strong> -.--</div>
+            <div class="morse-item"><strong>Z:</strong> --..</div>
+          </div>
+
+          <h3 style="margin-top: 28px; margin-bottom: 14px;">Convert Text to Morse Code</h3>
+          <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 18px; padding: 24px; margin-bottom: 32px;">
+            <label style="display: block; margin-bottom: 12px; color: #a5f3fc; font-weight: 600;">Enter Text:</label>
+            <input 
+              type="text" 
+              id="textInput" 
+              placeholder="Type a message here (letters and numbers only)" 
+              style="width: 100%; padding: 14px; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; background: rgba(10, 25, 50, 0.6); color: #e5f7ff; font-size: 1rem; margin-bottom: 18px;"
+            >
+            
+            <label style="display: block; margin-bottom: 12px; color: #a5f3fc; font-weight: 600;">Morse Code Output:</label>
+            <div 
+              id="morseOutput" 
+              style="background: rgba(10, 25, 50, 0.8); padding: 16px; border-radius: 10px; min-height: 60px; color: #38bdf8; font-family: 'Courier New', monospace; font-size: 1.1rem; word-break: break-all; line-height: 1.6; border: 1px solid rgba(56, 189, 248, 0.2);"
+            >
+              Morse code will appear here...
+            </div>
+          </div>
+
+          <h3 style="margin-top: 28px; margin-bottom: 14px;">Morse Code Input</h3>
+          <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 18px; padding: 24px;">
+            <label style="display: block; margin-bottom: 12px; color: #a5f3fc; font-weight: 600;">Enter Morse Code (use . for dots, - for dashes, space between characters):</label>
+            <textarea 
+              id="morseInput" 
+              placeholder="Example: .... . .-.. .-.. --- / .-- --- .-. .-.. -.." 
+              style="width: 100%; padding: 14px; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; background: rgba(10, 25, 50, 0.6); color: #e5f7ff; font-size: 1rem; font-family: 'Courier New', monospace; min-height: 100px; margin-bottom: 18px; resize: vertical;"
+            ></textarea>
+            
+            <label style="display: block; margin-bottom: 12px; color: #a5f3fc; font-weight: 600;">Decoded Message:</label>
+            <div 
+              id="decodedOutput" 
+              style="background: rgba(10, 25, 50, 0.8); padding: 16px; border-radius: 10px; min-height: 60px; color: #a5f3fc; font-size: 1rem; word-break: break-all; line-height: 1.6; border: 1px solid rgba(56, 189, 248, 0.2);"
+            >
+              Decoded message will appear here...
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Created by Jeremiah Farouk | PUIT/24210088</footer>
+
+  <style>
+    .morse-item {
+      background: rgba(56, 189, 248, 0.12);
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: #dbe8f8;
+      font-family: 'Courier New', monospace;
+    }
+
+    .morse-item strong {
+      color: #38bdf8;
+    }
+  </style>
+
+  <script>
+    // Morse code dictionary
+    const morseDict = {
+      'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 
+      'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+      'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+      'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+      'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
+      'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--',
+      '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
+      '9': '----.'
+    };
+
+    // Reverse dictionary for decoding
+    const reverseMorseDict = {};
+    for (let char in morseDict) {
+      reverseMorseDict[morseDict[char]] = char;
+    }
+
+    // Text to Morse conversion
+    document.getElementById('textInput')?.addEventListener('input', function() {
+      const text = this.value.toUpperCase();
+      let morse = '';
+      for (let char of text) {
+        if (morseDict[char]) {
+          morse += morseDict[char] + ' ';
+        } else if (char === ' ') {
+          morse += '/ ';
+        }
+      }
+      document.getElementById('morseOutput').textContent = morse.trim() || 'Morse code will appear here...';
+    });
+
+    // Morse to Text conversion
+    document.getElementById('morseInput')?.addEventListener('input', function() {
+      const morse = this.value.trim();
+      const chars = morse.split(' ');
+      let text = '';
+      for (let code of chars) {
+        if (code === '/') {
+          text += ' ';
+        } else if (reverseMorseDict[code]) {
+          text += reverseMorseDict[code];
+        }
+      }
+      document.getElementById('decodedOutput').textContent = text || 'Decoded message will appear here...';
+    });
+  </script>
+</body>
+</html>
